@@ -9,4 +9,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+import axios from 'axios';
+
+onMounted(()=>{
+  axios.get('/api/v2/Recap/test2').then((response:any)=>{
+    console.log(response)
+  })
+})
+</script>
