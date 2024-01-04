@@ -39,42 +39,42 @@ const router = createRouter({
     {
       path: '/accountbook',
       name: 'accountbook',
-      component: () => import('@/views/accountBook/AccountBook.vue'),
+      component: () => import('@/views/accountbook/AccountBook.vue'),
       children: [
         {
           path : 'main',
           name : 'accountMain',
-          component : () => import('@/views/accountBook/MainView.vue')
+          component : () => import('@/views/accountbook/MainView.vue')
         },
         {
           path : 'budget',
           name : 'budget',
-          component : () => import('@/views/accountBook/BudgetView.vue')
+          component : () => import('@/views/accountbook/BudgetView.vue')
         },
         {
           path : 'asset',
           name : 'asset',
-          component : () => import('@/views/accountBook/AssetView.vue')
+          component : () => import('@/views/accountbook/AssetView.vue')
         },
         {
           path : 'books',
           name : 'accountBooks',
-          component : () => import('@/views/accountBook/BooksView.vue')
+          component : () => import('@/views/accountbook/BooksView.vue')
         },
         {
           path : 'callender',
           name : 'accountCallender',
-          component : () => import('@/views/accountBook/CallenderView.vue')
+          component : () => import('@/views/accountbook/CallenderView.vue')
         },
         {
           path : 'report',
           name : 'accountReport',
-          component : () => import('@/views/accountBook/ReportView.vue')
+          component : () => import('@/views/accountbook/ReportView.vue')
         },
         {
           path : 'library',
           name : 'accountLibrary',
-          component : () => import('@/views/accountBook/LibraryView.vue')
+          component : () => import('@/views/accountbook/LibraryView.vue')
         },
       ]
     },
