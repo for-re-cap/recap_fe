@@ -65,7 +65,8 @@
                     </div>
                     <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">날짜 선택</p>
-                      <VueDatePicker v-model="date" class="col-span-4"></VueDatePicker>
+                      <input type="date" v-model="date" class="col-span-4">
+                      <!-- <VueDatePicker v-model="date" class="col-span-4"></VueDatePicker> -->
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
                       <select class="col-span-4 border">
                         <option>반복주기</option>
@@ -111,8 +112,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
-import VueDatePicker from "@vuepic/vue-datepicker";
-import "@vuepic/vue-datepicker/dist/main.css";
 
 defineProps<{
   open: boolean;

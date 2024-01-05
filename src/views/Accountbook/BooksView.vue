@@ -11,23 +11,33 @@
       <div class="pt-2 mb-2">
         <TabsInPill v-model:tabs="tabs" />
       </div>
-      <table>
+      <table class="w-full">
         <thead>
           <tr>
-            <td class="border">날짜</td>
-            <td class="border">분류</td>
-            <td class="border">카테고리</td>
-            <td class="border">상세카테고리</td>
-            <td class="border">내용</td>
-            <td class="border">금액</td>
-            <td class="border">결제수단</td>
-            <td class="border">할부</td>
-            <td class="border">메모</td>
-            <td class="border">태그</td>
-            <td class="border">삭제</td>
-            <td class="border">복제</td>
+            <td colspan="12" class="bg-orange-300 py-1">
+              <p class="flex gap-2 float-right">
+                <TableCellsIcon class="w-5 h-5" />
+                <PencilIcon class="w-5 h-5" />
+                <TrashIcon class="w-5 h-5" />
+                <TagIcon class="w-5 h-5" /> 
+              </p>
+            </td>
           </tr>
         </thead>
+        <tbody>
+          <td class="border">날짜</td>
+          <td class="border">분류</td>
+          <td class="border">카테고리</td>
+          <td class="border">상세카테고리</td>
+          <td class="border">내용</td>
+          <td class="border">금액</td>
+          <td class="border">결제수단</td>
+          <td class="border">할부</td>
+          <td class="border">메모</td>
+          <td class="border">태그</td>
+          <td class="border">삭제</td>
+          <td class="border">복제</td>
+        </tbody>
       </table>
     </main>
   </div>
@@ -36,7 +46,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TabsInPill from "@/components/TabsInPill.vue";
-
+import { PencilIcon, TableCellsIcon, TrashIcon,TagIcon } from "@heroicons/vue/24/outline";
 
 /** tabs  */
 const tabs = ref([
