@@ -32,7 +32,7 @@
                   <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">예산 내역 추가</DialogTitle>
                   <div class="mt-2 flex flex-col justify-start gap-y-6">
                     <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">카데고리</p>
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><SwatchIcon class="w-5 h-5"/></p>
                       <select class="col-span-4 border">
                         <option>식사</option>
                         <option>식사2</option>
@@ -46,15 +46,15 @@
                       </select>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">내용</p>
-                      <input class="col-span-4 border" />
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><PencilSquareIcon class="w-5 h-5 "/></p>
+                      <input class="col-span-4 border" placeholder="지출내역을 입력해주세요."/>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">금액</p>
-                      <input type="number" class="col-span-4 border" />
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><BanknotesIcon class="w-5 h-5"/></p>
+                      <input type="number" class="col-span-4 border" placeholder="지출금액을 입력해주세요."/>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">결제수단</p>
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><WalletIcon class="w-5 h-5"/></p>
                       <select class="col-span-4 border">
                         <option>자산목록에서</option>
                       </select>
@@ -64,7 +64,7 @@
                       </select>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">날짜 선택</p>
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><CalendarIcon class="w-5 h-5"/></p>
                       <input type="date" v-model="date" class="col-span-4">
                       <!-- <VueDatePicker v-model="date" class="col-span-4"></VueDatePicker> -->
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
@@ -73,13 +73,13 @@
                       </select>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center mt-1">테그</p>
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center mt-1"><TagIcon class="w-5 h-5"/></p>
                       <div class="col-span-4 text-sm text-gray-500 font-semibold text-left break-words">
                         <span v-for="tag in tagList" :key="tag.id" class="border inline-block mr-2 mt-1 px-1 hover:bg-slate-100 hover:cursor-pointer">{{ tag.name }}</span>
                       </div>
                     </div>
                     <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center">메모</p>
+                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><DocumentIcon class="w-5 h-5"/></p>
                       <input class="col-span-4 border" />
                     </div>
                   </div>
@@ -112,6 +112,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
+import { PencilSquareIcon, SwatchIcon, BanknotesIcon, CalendarIcon, TagIcon, WalletIcon, DocumentIcon} from "@heroicons/vue/24/outline"
 
 defineProps<{
   open: boolean;
