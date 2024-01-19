@@ -16,7 +16,7 @@
           <tr>
             <td colspan="12" class="bg-orange-300 py-1">
               <p class="flex gap-2 float-right">
-                <TableCellsIcon class="w-5 h-5" />
+                <SquaresPlusIcon class="w-5 h-5" />
                 <PencilIcon class="w-5 h-5" />
                 <TrashIcon class="w-5 h-5" />
                 <TagIcon class="w-5 h-5" /> 
@@ -46,12 +46,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import TabsInPill from "@/components/TabsInPill.vue";
-import { PencilIcon, TableCellsIcon, TrashIcon,TagIcon } from "@heroicons/vue/24/outline";
+import { PencilIcon,  TrashIcon,TagIcon ,SquaresPlusIcon} from "@heroicons/vue/24/outline";
 
 /** tabs  */
 const tabs = ref([
-  { name: "날짜별", href: 0, current: true },
-  { name: "카테고리별", href: 1, current: false },
-  { name: "자산별", href: 2, current: false },
+  { name: "날짜별", idx: 0, route: "" },
+  { name: "카테고리별", idx: 1, route: "" },
+  { name: "자산별", idx: 2, route: "" },
 ]);
 </script>
