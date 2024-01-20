@@ -53,7 +53,45 @@ const router = createRouter({
         {
           path: "asset",
           name: "asset",
-          component: () => import("@/views/accountbook/AssetView.vue"),
+          component: () => import("@/views/accountbook/asset/AssetView.vue"),
+          children: [
+            {
+              path: "card",
+              name: "assetCard",
+              component: () =>
+                import(
+                  "@/views/accountbook/asset/components/AssetCardView.vue"
+                ),
+            },
+            {
+              path: "bank",
+              name: "assetBank",
+              component: () =>
+                import(
+                  "@/views/accountbook/asset/components/AssetBankView.vue"
+                ),
+            },
+            {
+              path: "stock",
+              name: "assetStock",
+              component: () =>
+                import(
+                  "@/views/accountbook/asset/components/AssetStockView.vue"
+                ),
+            },
+            {
+              path: "Debt",
+              name: "assetDebt",
+              component: () =>
+                import(
+                  "@/views/accountbook/asset/components/AssetDebtView.vue"
+                ),
+            },
+            {
+              path: "/:pathMatch(.*)*",
+              redirect: "/accountbook/asset/card",
+            },
+          ],
         },
         {
           path: "books",
@@ -73,21 +111,28 @@ const router = createRouter({
         {
           path: "library",
           name: "accountLibrary",
-          component: () => import("@/views/accountbook/library/LibraryView.vue"),
+          component: () =>
+            import("@/views/accountbook/library/LibraryView.vue"),
           children: [
             {
               path: "category",
               name: "libarayCategory",
-              component: () => import("@/views/accountbook/library/components/LibraryCateView.vue"),
+              component: () =>
+                import(
+                  "@/views/accountbook/library/components/LibraryCateView.vue"
+                ),
             },
             {
               path: "tag",
               name: "libarayTag",
-              component: () => import("@/views/accountbook/library/components/LibraryTagsView.vue"),
+              component: () =>
+                import(
+                  "@/views/accountbook/library/components/LibraryTagsView.vue"
+                ),
             },
             {
-              path: '/:pathMatch(.*)*',
-              redirect: '/accountbook/library/category'
+              path: "/:pathMatch(.*)*",
+              redirect: "/accountbook/library/category",
             },
           ],
         },

@@ -109,7 +109,7 @@ import { EllipsisHorizontalIcon } from "@heroicons/vue/20/solid";
 import type { Asset } from "@/types";
 import { fnum } from "@/ts/utils";
 
-import ConnectAsset from "@/views/accountBook/components/ConnectAsset.vue";
+import ConnectAsset from "@/views/accountbook/components/ConnectAsset.vue";
 import { ref } from "vue";
 
 defineProps<{
