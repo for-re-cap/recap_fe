@@ -108,7 +108,7 @@ import { getNames } from "@/stores/ui";
 const subName = getNames();
 
 const navigation = [
-  { name: "소개", href: "/about/main" },
+  { name: "소개", href: "/about" },
   { name: "데일리리포트", href: "/dailyreport/main" },
   { name: "가계부", href: "/accountbook/main" },
   { name: "습관카드", href: "#" },

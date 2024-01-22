@@ -14,11 +14,15 @@ export default defineConfig({
     }
   },
   server : {
-    proxy : {
-      '/api' : {
-        target : 'http://127.0.0.1:8080',
+    proxy : { //http://175.116.50.125/
+      '/api/v1/recap' : {
+        target : 'http://127.0.0.1:8080', 
         changeOrigin : true
-      }
+      },
+      // '/api/v1/recap' : {
+      //   target : 'http://175.116.50.125/', 
+      //   changeOrigin : true
+      // }
     }
   }
 })

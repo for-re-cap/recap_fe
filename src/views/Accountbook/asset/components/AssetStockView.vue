@@ -1,6 +1,5 @@
 <template>
   <div>
-    카드
     <AssetsCard :List="stock"/>
   </div>
 </template>

@@ -23,6 +23,7 @@ const router = createRouter({
       component: () => import("@/views/login/SignUpView.vue"),
     },
 
+    /*************************** about 페이지 ************************************************* */
     {
       path: "/about",
       name: "about",
@@ -88,7 +89,7 @@ const router = createRouter({
                 ),
             },
             {
-              path: "/:pathMatch(.*)*",
+              path: "/accountbook/asset/:pathMatch(.*)*",
               redirect: "/accountbook/asset/card",
             },
           ],
@@ -131,7 +132,7 @@ const router = createRouter({
                 ),
             },
             {
-              path: "/:pathMatch(.*)*",
+              path: "/accountbook/library/:pathMatch(.*)*",
               redirect: "/accountbook/library/category",
             },
           ],
