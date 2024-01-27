@@ -49,7 +49,7 @@ const router = createRouter({
         {
           path: "budget",
           name: "budget",
-          component: () => import("@/views/accountbook/BudgetView.vue"),
+          component: () => import("@/views/accountbook/budget/BudgetView.vue"),
         },
         {
           path: "asset",
