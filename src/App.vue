@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full">
     <header>
-      <HeaderMain v-show="showTopbar" class="z-50 "/>
+      <HeaderMain v-show="showTopbar" class="z-50" />
     </header>
     <div class="min-h-screen">
       <SideBar v-show="sidebarOpen" />
@@ -9,7 +9,7 @@
     </div>
     <footer class="" v-show="false">
       <FooterBar class="relative bottom-0" />
-    </footer >
+    </footer>
   </div>
 </template>
 
@@ -21,9 +21,10 @@ import FooterBar from "./components/Footer.vue";
 import { module } from "@/stores/ui";
 
 const store = module();
-
 const sidebarOpen = computed(() => store.sidebarOpen); // side bar show
-const showTopbar = computed(() => store.showTopbar)
+const showTopbar = computed(() => store.showTopbar);
+
+
 
 
 

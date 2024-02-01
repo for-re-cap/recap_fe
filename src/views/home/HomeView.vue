@@ -49,6 +49,13 @@
 <script setup lang="ts">
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from "@heroicons/vue/24/outline";
 
+import { module } from "@/stores/ui";
+
+const storeUi = module();
+
+storeUi.setSide(false)
+storeUi.setTop(true)
+
 const features = [
   {
     name: "Push to deploy",

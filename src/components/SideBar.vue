@@ -58,7 +58,7 @@
                 <nav class="flex flex-1 flex-col">
                   <ul role="list" class="-mx-2 mt-2 space-y-1">
                         <li v-for="content in contents" :key="content.name">
-                          <router-link v-slot="{ href, route, navigate, isActive, isExactActive }" :to="content.href" >
+                          <RouterLink v-slot="{ href, route, navigate, isActive, isExactActive }" :to="content.href" >
                             <a
                               :class="[
                                 isActive ? 'bg-gray-50 text-indigo-600' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
@@ -74,7 +74,7 @@
                               >
                               <span class="truncate">{{ content.name }}</span>
                             </a>
-                          </router-link>
+                          </RouterLink>
                         </li>
                       </ul>
                   <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -117,7 +117,7 @@
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
         <div class="flex h-16 shrink-0 items-center">
-          <a href="/" class="flex items-center gap-2"><img class="h-8 w-auto" src="@/assets/red_bottle_cap_aih.png" alt="Your Company" />Re;Cap</a>
+          <router-link :to="'/'" class="flex items-center gap-2"><img class="h-8 w-auto" src="@/assets/red_bottle_cap_aih.png" alt="Your Company" />Re;Cap</router-link>
         </div>
         <nav class="flex flex-1 flex-col">
           <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -203,7 +203,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, ref } from "vue";
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import { Bars3Icon, CalendarIcon, ChartPieIcon, DocumentDuplicateIcon, FolderIcon, HomeIcon, UsersIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { sidebarContents,getNames } from "@/stores/ui";
