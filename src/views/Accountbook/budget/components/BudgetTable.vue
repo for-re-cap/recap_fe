@@ -1,6 +1,6 @@
 <template>
   <BudgetAdd  v-if="budgetAdd" v-model:open="budgetAdd" @update:open="(data)=> {budgetAdd = data; } "/>
-  <div class="px-4 sm:px-6 lg:px-8">
+  <div class="pr-2">
     <div class="sm:flex sm:items-center">
       <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
         <button
@@ -16,11 +16,22 @@
       <table class="min-w-full divide-y divide-gray-300">
         <thead>
           <tr>
-            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">항목</th>
-            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">내용</th>
-            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">금액</th>
-            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">결제수단</th>
-            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">비고</th>
+            <th scope="col" colspan="6" class="py-1 pr-3 text-sm font-semibold text-gray-700  bg-orange-300">
+              <p class="flex gap-3 float-right">
+                <button><SquaresPlusIcon class="w-5 h-5" /></button>
+                <button><PencilIcon class="w-5 h-5" /></button>
+                <button><TrashIcon class="w-5 h-5" /></button>
+                <button><TagIcon class="w-5 h-5" /></button> 
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col" class="py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">항목</th>
+            <th scope="col" class="hidden px-3 py-2 text-left text-sm font-semibold text-gray-900 lg:table-cell">내용</th>
+            <th scope="col" class="hidden px-3 py-2 text-left text-sm font-semibold text-gray-900 sm:table-cell">금액</th>
+            <th scope="col" class="hidden px-3 py-2 text-left text-sm font-semibold text-gray-900 sm:table-cell">일자</th>
+            <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900">결제</th>
+            <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900">비고</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200 bg-white">
@@ -35,8 +46,9 @@
               </dl>
             </td>
             <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ budget.contents }}</td>
-            <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ fnum(budget.am) }}</td>
-            <td class="px-3 py-4 text-sm text-gray-500">{{ budget.role }}</td>
+            <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ fnum(budget.am) }}</td>
+            <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">2024-02-01</td>
+            <td class="px-3 py-4 text-sm text-gray-500">{{ budget.pay }}</td>
           </tr>
         </tbody>
       </table>
@@ -49,6 +61,7 @@ import { PlusIcon } from "@heroicons/vue/24/outline";
 import { fnum } from "@/ts/utils";
 import BudgetAdd from "./BudgetAdd.vue";
 import { ref } from "vue";
+import { PencilIcon,  TrashIcon,TagIcon ,SquaresPlusIcon} from "@heroicons/vue/24/outline";
 
 const budgetAdd = ref(false)
 
@@ -57,7 +70,7 @@ defineProps<{
     category: string;
     contents: string;
     am: number;
-    role: string;
+    pay: string;
   }[];
 }>();
 </script>

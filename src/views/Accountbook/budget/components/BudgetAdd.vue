@@ -1,7 +1,8 @@
 <template>
+<div >
   <TransitionRoot as="template" :show="open">
     <Dialog as="div" class="relative z-[100]">
-      <div class="fixed inset-0 z-[100] w-screen overflow-y-auto">
+      <div class="fixed inset-0 z-[100] w-screen overflow-y-auto border-">
         <TransitionChild
           as="template"
           enter="ease-out duration-300"
@@ -23,7 +24,7 @@
             leave-from="opacity-100 translate-y-0 sm:scale-100"
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <DialogPanel class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+            <DialogPanel class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 shadow-lg">
               <div>
                 <!-- <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                   <CheckIcon class="h-6 w-6 text-green-600" aria-hidden="true" />
@@ -53,15 +54,15 @@
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><BanknotesIcon class="w-5 h-5"/></p>
                       <input type="number" class="col-span-4 border" placeholder="지출금액을 입력해주세요."/>
                     </div>
-                    <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
+                    <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><WalletIcon class="w-5 h-5"/></p>
                       <select class="col-span-4 border">
                         <option>자산목록에서</option>
                       </select>
-                      <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
+                      <!-- <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
                       <select class="col-span-4 border">
                         <option>일시불</option>
-                      </select>
+                      </select> -->
                     </div>
                     <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                       <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><CalendarIcon class="w-5 h-5"/></p>
@@ -107,6 +108,7 @@
       </div>
     </Dialog>
   </TransitionRoot>
+</div>
 </template>
 
 <script setup lang="ts">

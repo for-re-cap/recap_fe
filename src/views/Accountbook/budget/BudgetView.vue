@@ -5,7 +5,7 @@
     </header>
     <main class="pt-2 border h-screen">
       <div class="mt-2 pl-4">
-        <div class="pr-12">
+        <div class="">
           <div class="sm:flex-auto">
             <h1 class="text-base font-semibold leading-6 text-gray-900">
               수입예산
@@ -33,6 +33,7 @@ import TabsInPill from "@/components/TabsInPill.vue";
 import ListBox from "@/components/BasListBox.vue";
 import BudgetTable from "./components/BudgetTable.vue";
 
+
 const propList = [
   { name: "전체", id: 0 },
   { name: "수입", id: 1 },
@@ -45,7 +46,7 @@ const selected = ref(propList[0]);
 
 /** 예산 목록 */
 const budgetList = ref([
-  { category: "주수입", contents: "월급", am: 10000, role: "계좌" },
+  { category: "주수입", contents: "월급", am: 10000, pay: "계좌" },
 ]);
 
 const addbudget = (dsc: number) => {

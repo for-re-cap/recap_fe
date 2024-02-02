@@ -52,7 +52,7 @@
             />
           </div>
 
-          <div class="flex flex-col my-4">
+          <!-- <div class="flex flex-col my-4">
             <label for="password" class="text-gray-700">Password</label>
             <div x-data="{ show: false }" class="relative flex items-center mt-2">
               <input
@@ -118,7 +118,7 @@
                 </svg>
               </button>
             </div>
-          </div>
+          </div> -->
 
           <div class="flex items-center">
             <input type="checkbox" name="remember_me" id="remember_me" class="mr-2 focus:ring-0 rounded" />

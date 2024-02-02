@@ -14,12 +14,12 @@
       <table class="w-full">
         <thead>
           <tr>
-            <td colspan="12" class="bg-orange-300 py-1">
-              <p class="flex gap-2 float-right">
-                <SquaresPlusIcon class="w-5 h-5" />
-                <PencilIcon class="w-5 h-5" />
-                <TrashIcon class="w-5 h-5" />
-                <TagIcon class="w-5 h-5" /> 
+            <td colspan="12" class="py-1 pr-3 text-sm font-semibold text-gray-700  bg-orange-300">
+              <p class="flex gap-3 float-right">
+                <button><SquaresPlusIcon class="w-5 h-5" /></button>
+                <button><PencilIcon class="w-5 h-5" /></button>
+                <button><TrashIcon class="w-5 h-5" /></button>
+                <button><TagIcon class="w-5 h-5" /></button> 
               </p>
             </td>
           </tr>
