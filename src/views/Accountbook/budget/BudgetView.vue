@@ -18,7 +18,7 @@
             <p class="mt-2 text-sm text-gray-700">
               1년중 수입에대한 예산을 입력해주세요
             </p>
-            <BudgetTable v-model:budgetList="budgetList" />
+            <BudgetTable v-model:budgetList="budgetList" @addBudget="addBudget($event)"/>
           </div>
         </div>
       </div>
@@ -46,10 +46,11 @@ const selected = ref(propList[0]);
 
 /** 예산 목록 */
 const budgetList = ref([
-  { category: "주수입", contents: "월급", am: 10000, pay: "계좌" },
+  { budgetDsc : "수입" , category: "주수입", detailCate :"", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
 ]);
 
-const addbudget = (dsc: number) => {
-  // 0수입 1지출 3저축 4투자
+const addBudget = (budget: any) => {
+  // TODO :: 백앤드 저장 연동
+  budgetList.value.push(budget)
 };
 </script>
