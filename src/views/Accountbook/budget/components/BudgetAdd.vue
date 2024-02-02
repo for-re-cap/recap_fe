@@ -33,9 +33,14 @@
                     <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">예산 내역 추가</DialogTitle>
                     <div class="mt-2 flex flex-col justify-start gap-y-6">
                       <div class="flex gap-4 justify-center">
-                        <button v-for="budget in budgetDsc" :key="budget.id" :class="[budgetAdd.budgetDsc == budget.id ? 'bg-indigo-400' : ''  ,'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
-                        @click="budgetAdd.budgetDsc = budget.id"
-                        >{{ budget.name }}</button>
+                        <button
+                          v-for="budget in budgetDsc"
+                          :key="budget.id"
+                          :class="[budgetAdd.budgetDsc == budget.id ? 'bg-indigo-400' : '', 'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
+                          @click="budgetAdd.budgetDsc = budget.id"
+                        >
+                          {{ budget.name }}
+                        </button>
                       </div>
                       <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><SwatchIcon class="w-5 h-5" /></p>
@@ -89,7 +94,7 @@
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><DocumentIcon class="w-5 h-5" /></p>
-                        <input class="col-span-4 border" v-model="budgetAdd.cntn"/>
+                        <input class="col-span-4 border" v-model="budgetAdd.cntn" />
                       </div>
                     </div>
                   </div>
@@ -98,14 +103,14 @@
                   <button
                     type="button"
                     class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @click="$emit('update:open', {dsc :false, budget: budgetAdd}) /* TODO 저장기능 만들어줘야행 */"
+                    @click="$emit('update:open', { dsc: false, budget: budgetAdd }) /* TODO 저장기능 만들어줘야행 */"
                   >
                     저장
                   </button>
                   <button
                     type="button"
                     class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @click="$emit('update:open',{dsc :false, budget: null})"
+                    @click="$emit('update:open', { dsc: false, budget: null })"
                   >
                     취소
                   </button>
@@ -124,15 +129,16 @@ import { computed, ref } from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import { PencilSquareIcon, SwatchIcon, BanknotesIcon, CalendarIcon, TagIcon, WalletIcon, DocumentIcon } from "@heroicons/vue/24/outline";
 
-import { format } from 'date-fns'
+import { format } from "date-fns";
+import type { Budget } from "@/types";
 
 defineProps<{
   open: boolean;
 }>();
 
-const now = new Date()
-const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-const date = format(today, 'yyyy-MM-dd')
+const now = new Date();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+const date = format(today, "yyyy-MM-dd");
 
 const tagList = [
   { id: 0, name: "가족" },
@@ -151,30 +157,16 @@ const budgetDsc = [
 
 const selectedBudget = ref(budgetDsc[0]);
 
-const budgetAdd = ref<{
-  budgetDsc : number,
-  category : string,
-  detailCate : string
-  contents : string,
-  am : number,
-  days: string,
-  payMethod : string,
-  cntn : string,
-}>({
-budgetDsc: 0,
-category: "",
-detailCate: "",
-contents: "",
-am: 0,
-days: date,
-payMethod: "",
-cntn: ""
-})
+const budgetAdd = ref<Budget>({
+  budgetDsc: 0,
+  category: "",
+  detailCate: "",
+  contents: "",
+  am: 0,
+  days: date,
+  payMethod: "",
+  cntn: "",
+});
 
-const budget = computed(()=>{
-
-
-
-
-})
+const budget = computed(() => {});
 </script>

@@ -21,7 +21,7 @@ export interface Tag {
 }
 
 export interface Budget {
-  budgetDsc: number | number;
+  budgetDsc: number | string;
   category: string;
   detailCate: string;
   contents: string;
