@@ -27,13 +27,13 @@ const selectOption = [
 ];
 
 const content = [
-  { name: "홈", href: "/accountbook/main", icon: "H" },
+  { name: "홈", href: "/accountbook/home", icon: "H" },
   { name: "라이브러리", href: "/accountbook/library", icon: "L" },
   { name: "자산", href: "/accountbook/asset", icon: "A" },
   { name: "예산", href: "/accountbook/budget", icon: "B" },
   { name: "가계부내역", href: "/accountbook/books", icon: "W" },
   { name: "달력", href: "/accountbook/callender", icon: "C" },
-  { name: "통계", href: "/accountbook/report", icon: "C" },
+  // { name: "통계", href: "/accountbook/report", icon: "C" },
 ];
 
 onMounted(() => {

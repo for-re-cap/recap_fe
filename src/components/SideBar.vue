@@ -212,19 +212,15 @@ const subName = getNames();
 const store = sidebarContents();
 
 const navigation = [
-  {
-    name: "데일리리포트",
-    href: "/dailyreport/main",
-    icon: HomeIcon,
-  },
-  { name: "가계부", href: "/accountbook/main", icon: UsersIcon },
-  { name: "습관노트", href: "/habbitCard", icon: FolderIcon },
+  { name: "데일리리포트", href: "/dailyreport/home", icon: HomeIcon, },
+  { name: "가계부", href: "/accountbook/home", icon: UsersIcon },
+  // { name: "습관노트", href: "/habbitCard/home", icon: FolderIcon },
   // { name: "Calendar", href: "#", icon: CalendarIcon },
   // { name: "Documents", href: "#", icon: DocumentDuplicateIcon },
   // { name: "Reports", href: "#", icon: ChartPieIcon },
 ];
 
-const selectedNav = ref(navigation[0])
+
 
 const contents = computed(()=> store.sideContent)
 

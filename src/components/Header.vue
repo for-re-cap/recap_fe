@@ -109,8 +109,8 @@ const subName = getNames();
 
 const navigation = [
   { name: "소개", href: "/about" },
-  { name: "데일리리포트", href: "/dailyreport/main" },
-  { name: "가계부", href: "/accountbook/main" },
+  { name: "데일리리포트", href: "/dailyreport/home" },
+  { name: "가계부", href: "/accountbook/home" },
   { name: "습관카드", href: "#" },
 ];
 

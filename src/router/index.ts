@@ -29,22 +29,41 @@ const router = createRouter({
       name: "about",
       component: () => import("@/views/about/AboutView.vue"),
     },
+
+
+    /*************************** 데일리리포트 페이지 ************************************************* */
     {
       path: "/dailyreport",
       name: "dailyreport",
-      component: () => import("@/views/daily_report/DailyReportView.vue"),
+      component: () => import("@/views/dailyReport/DailyReportView.vue"),
+      children: [
+        {
+          path : "home",
+          name : "dailyReportMain",
+          component : () => import("@/views/dailyReport/home/DRHome.vue")
+        },
+        {
+          path : "editor",
+          name : "dailyReportEditor",
+          component : () => import("@/views/dailyReport/editor/DREditorVIew.vue")
+        }
+      ]
     },
 
-    // 가계부
+    /*************************** 가계부 페이지 ************************************************* */
     {
       path: "/accountbook",
       name: "accountbook",
       component: () => import("@/views/accountbook/AccountBook.vue"),
       children: [
         {
-          path: "main",
+          path: "/accountbook/:pathMatch(.*)*",
+          redirect: "/accountbook/main",
+        },
+        {
+          path: "home",
           name: "accountMain",
-          component: () => import("@/views/accountbook/MainView.vue"),
+          component: () => import("@/views/accountbook/AccountBookHome.vue"),
         },
         {
           path: "budget",
