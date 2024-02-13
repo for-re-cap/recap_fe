@@ -38,7 +38,7 @@
             <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">카테고리</th>
             <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">내용</th>
             <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">금액</th>
-            <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">일자</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">일자</th>
             <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">결제</th>
             <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">비고</th>
           </tr>
@@ -69,7 +69,7 @@
             </td>
             <td class="px-3 py-4 text-sm text-gray-500">{{ budget.contents }}</td>
             <td class="px-3 py-4 text-sm text-gray-500 text-right">{{ fnum(budget.am) }}</td>
-            <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500 text-center">{{ budget.days }}</td>
+            <td class="px-3 py-4 text-sm text-gray-500 text-center">{{ budget.days }}</td>
             <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ budget.payMethod }}</td>
             <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ budget.cntn }}</td>
           </tr>

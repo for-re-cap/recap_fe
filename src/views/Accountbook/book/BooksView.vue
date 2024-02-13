@@ -8,9 +8,6 @@
         <option>11월 2023</option>
         <option>12월 2023</option>
       </select>
-      <div class="pt-2 mb-2">
-        <TabsInPill v-model:tabs="tabs" />
-      </div>
       <table class="w-full">
         <thead>
           <tr>
@@ -22,6 +19,15 @@
                 <button><TagIcon class="w-5 h-5" /></button> 
               </p>
             </td>
+          </tr>
+          <tr >
+            <th scope="col" class="sticky top-7 bg-orange-100 py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">항목</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">카테고리</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">내용</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">금액</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">일자</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">결제</th>
+            <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">비고</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +51,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import TabsInPill from "@/components/TabsInPill.vue";
 import { PencilIcon,  TrashIcon,TagIcon ,SquaresPlusIcon} from "@heroicons/vue/24/outline";
 
 /** tabs  */
@@ -54,4 +59,6 @@ const tabs = ref([
   { name: "카테고리별", idx: 1, route: "" },
   { name: "자산별", idx: 2, route: "" },
 ]);
+
+
 </script>

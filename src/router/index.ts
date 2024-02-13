@@ -116,7 +116,7 @@ const router = createRouter({
         {
           path: "books",
           name: "accountBooks",
-          component: () => import("@/views/accountbook/BooksView.vue"),
+          component: () => import("@/views/accountbook/book/BooksView.vue"),
         },
         {
           path: "callender",
