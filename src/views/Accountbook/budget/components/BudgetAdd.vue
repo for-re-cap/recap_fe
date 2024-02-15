@@ -103,7 +103,7 @@
                   <button
                     type="button"
                     class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @click="$emit('update:open', { dsc: false, budget: budgetAdd }) /* TODO 저장기능 만들어줘야행 */"
+                    @click="$emit('update:open', { dsc: true, budget: budgetAdd }) /* TODO 저장기능 만들어줘야행 */"
                   >
                     저장
                   </button>

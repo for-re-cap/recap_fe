@@ -86,6 +86,7 @@ import BudgetAdd from "./BudgetAdd.vue";
 import { computed, ref } from "vue";
 import { PencilIcon, TrashIcon, TagIcon, SquaresPlusIcon, ChevronRightIcon, ChevronDownIcon } from "@heroicons/vue/24/outline";
 import type { Budget } from "@/types";
+import { sortAndDeduplicateDiagnostics } from "typescript";
 
 const budgetAdd = ref(false);
 
@@ -115,7 +116,11 @@ const budgetMobilea = computed({
 
 const addBudget = (data: { dsc: boolean; budget: Budget }) => {
   budgetAdd.value = data.dsc;
-  console.log(data.budget);
-  emit("addBudget", data.budget);
+  if (data.dsc){
+    emit("addBudget", data.budget);
+  }else{
+    budgetAdd.value = data.dsc
+  } 
+
 };
 </script>
