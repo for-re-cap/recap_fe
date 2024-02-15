@@ -47,36 +47,36 @@ const selected = ref(propList[0]);
 
 /** 예산 목록 */
 const budgetList = ref<Budget[]>([ // TODO :: budgetDsc number or string 선택해주어야함
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,cntn:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
 ]);
 
 const addBudget = (budget: any) => {

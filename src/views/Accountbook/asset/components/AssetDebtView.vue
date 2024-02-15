@@ -20,7 +20,7 @@ const liability = ref<Asset[]>([
     user: "luke",
     share: false,
     sharedAsset: null,
-    cntn: "테스트용",
+    memo: "테스트용",
     modify: false,
   },
 ]);

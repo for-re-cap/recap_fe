@@ -96,7 +96,7 @@
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><DocumentIcon class="w-5 h-5" /></p>
-                        <input class="col-span-4 border" v-model="budgetAdd.cntn" />
+                        <input class="col-span-4 border" v-model="budgetAdd.memo" />
                       </div>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ const budgetAdd = ref<Budget>({
   am: 0,
   days: date,
   payMethod: "",
-  cntn: "",
+  memo: "",
 });
 
 const budget = computed(() => {});

@@ -71,7 +71,7 @@
             <td class="px-3 py-4 text-sm text-gray-500 text-right">{{ fnum(budget.am) }}</td>
             <td class="px-3 py-4 text-sm text-gray-500 text-center">{{ budget.days }}</td>
             <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ budget.payMethod }}</td>
-            <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ budget.cntn }}</td>
+            <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ budget.memo }}</td>
           </tr>
         </tbody>
       </table>

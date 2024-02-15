@@ -21,7 +21,7 @@ const cards = ref<Asset[]>([
     share: false,
     sharedAsset: null,
     payDate: 5,
-    cntn: "테스트용",
+    memo: "테스트용",
     modify: false,
   },
 ]);

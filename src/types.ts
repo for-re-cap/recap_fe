@@ -10,7 +10,7 @@ export interface Asset {
   sharedAsset: Asset | null;
   modify: boolean;
   payDate?: number;
-  cntn: string;
+  memo: string;
 }
 
 export interface Tag {
@@ -28,5 +28,18 @@ export interface Budget {
   am: number;
   days: string;
   payMethod: string;
-  cntn: string;
+  memo: string;
+}
+
+export interface AccountBook {
+  budgetDsc: number | string;
+  category: string;
+  detailCate: string;
+  contents: string;
+  am: number;
+  days: string;
+  payMethod: string;
+  memo: string;
+  tags: string[];
+  instal : number
 }
