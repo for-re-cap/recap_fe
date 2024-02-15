@@ -30,18 +30,20 @@
                   <CheckIcon class="h-6 w-6 text-green-600" aria-hidden="true" />
                 </div> -->
                   <div class="mt-3 text-center sm:mt-5">
-                    <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">예산 내역 추가</DialogTitle>
-                    <div class="mt-2 flex flex-col justify-start gap-y-6">
-                      <div class="flex gap-4 justify-center">
+                    <div class="flex justify-between items-center">
+                      <DialogTitle as="h3" class="mt-4 pb-3 font-semibold leading-6 text-gray-900 ">예산 내역 추가</DialogTitle>
+                      <div class="flex gap-2 justify-end text-sm">
                         <button
                           v-for="budget in budgetDsc"
                           :key="budget.id"
-                          :class="[budgetAdd.budgetDsc == budget.id ? 'bg-indigo-400' : '', 'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
+                          :class="[budgetAdd.budgetDsc == budget.id ? 'text-red-600' : '', 'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
                           @click="budgetAdd.budgetDsc = budget.id"
                         >
                           {{ budget.name }}
                         </button>
                       </div>
+                    </div>
+                    <div class="mt-2 flex flex-col justify-start gap-y-6">
                       <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><SwatchIcon class="w-5 h-5" /></p>
                         <select class="col-span-4 border" @change="(event:any) => budgetAdd.category = event.target.value">
