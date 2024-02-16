@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full">
+  <div class="w-full h-full bg-neutral-50">
     <header>
       <HeaderMain v-show="showTopbar" class="z-50" />
     </header>
