@@ -14,21 +14,21 @@
         </button>
         <button @click="dateToday" class="rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-700 shadow-sm hover:bg-gray-50">오늘</button>
       </div>
-      
-      <DREditorTable />
 
-
+      <div class="flex justify-center">
+        <DREditorTable :today="date" :timeLine="timeLine" />
+      </div>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import DatePicker from "@/components/DatePicker.vue";
 import { format, parse, add } from "date-fns";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/outline";
 
-import DREditorTable from "./components/DREditorTable.vue"
+import DREditorTable from "./components/DREditorTable.vue";
 
 // ================================================================================
 
@@ -42,10 +42,24 @@ const dateToday = () => {
   date.value = format(new Date(), "yyyy-MM-dd");
 };
 
+const timeLine = computed(()=>{
+  const start = 6;
+  const end = 24;
+  let timeLine:any = [];
+  let tempArr:any = []
+  new Array((end - start + start) * 4).fill(0).map((_, i) => {
+    const hour = Math.floor(i / 4) + start <= 24 ? Math.floor(i / 4) + start : Math.floor(i / 4) + start-24;
+    console.log(hour)
+    const min = i % 4 == 0 ? 0 : i % 4 == 1 ? 15 : i % 4 == 2 ? 30 : 45;
+    const time = hour.toString().padStart(2, "0") + ":" + min.toString().padStart(2, "0");
+    tempArr.push(time)
+    if (i % 4 == 3 && i > 0) {
+      timeLine.push({hour:hour, time:tempArr});
+      tempArr=[]
+    }
+  });
+  return timeLine
+})
+
 // ================================================================================
-
-
-
-
-
 </script>
