@@ -27,7 +27,7 @@ const mountDatePicker = () => {
     return;
   }
 
-  const config:any = {
+  const config: any = {
     // mode: 'range',
     enableTime: false,
     dateFormat: "Y-m-d",
@@ -36,15 +36,16 @@ const mountDatePicker = () => {
     locale: Korean,
     disableMobile: "true",
     onClose: (selectedDates: any, dateStr: any, instance: any) => {
-      if (dateStr == props.modelValue) return emits("update:modelValue", dateStr);
+      if (dateStr == props.modelValue) return;
+      emits("update:modelValue", dateStr);
     },
     onChange: (selectedDates: any, dateStr: any, instance: any) => {
       // console.log(selectedDates);
-      if (dateStr == props.modelValue) return emits("update:modelValue", dateStr);
+      if (dateStr == props.modelValue) return;
+      emits("update:modelValue", dateStr);
     },
     ...(props.options ?? {}),
   };
-
   datePicker = flatpickr(datePickerEl.value, config);
 };
 
