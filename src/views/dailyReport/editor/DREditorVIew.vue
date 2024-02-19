@@ -16,7 +16,7 @@
       </div>
 
       <div class="flex justify-center">
-        <DREditorTable :today="date" :timeLine="timeLine" />
+        <DREditorTable :date="date" :timeLine="timeLine" />
       </div>
     </main>
   </div>
@@ -33,7 +33,6 @@ import DREditorTable from "./components/DREditorTable.vue";
 // ================================================================================
 
 const date = ref(format(new Date(), "yyyy-MM-dd"));
-const respDate = ref("");
 
 const dateDelta = (days: number) => {
   date.value = format(add(parse(date.value, "yyyy-MM-dd", new Date()), { days }), "yyyy-MM-dd");
@@ -42,24 +41,27 @@ const dateToday = () => {
   date.value = format(new Date(), "yyyy-MM-dd");
 };
 
-const timeLine = computed(()=>{
+watch(date, (val) => {
+  console.log(val);
+});
+
+const timeLine = computed(() => {
   const start = 6;
   const end = 24;
-  let timeLine:any = [];
-  let tempArr:any = []
+  let timeLine: any = [];
+  let tempArr: any = [];
   new Array((end - start + start) * 4).fill(0).map((_, i) => {
-    const hour = Math.floor(i / 4) + start <= 24 ? Math.floor(i / 4) + start : Math.floor(i / 4) + start-24;
-    console.log(hour)
+    const hour = Math.floor(i / 4) + start <= 24 ? Math.floor(i / 4) + start : Math.floor(i / 4) + start - 24;
     const min = i % 4 == 0 ? 0 : i % 4 == 1 ? 15 : i % 4 == 2 ? 30 : 45;
     const time = hour.toString().padStart(2, "0") + ":" + min.toString().padStart(2, "0");
-    tempArr.push(time)
+    tempArr.push(time);
     if (i % 4 == 3 && i > 0) {
-      timeLine.push({hour:hour, time:tempArr});
-      tempArr=[]
+      timeLine.push({ hour: hour, time: tempArr });
+      tempArr = [];
     }
   });
-  return timeLine
-})
+  return timeLine;
+});
 
 // ================================================================================
 </script>
