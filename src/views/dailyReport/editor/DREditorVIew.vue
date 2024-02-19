@@ -1,9 +1,9 @@
 <template>
   <div>
     <header class="flex pl-4 py-2 h-10 items-center bg-slate-300">
-      <span class="font-semibold">가계부 작성</span>
+      <span class="font-semibold">데일리리포트 작성</span>
     </header>
-    <main class="pl-4 mt-4 border h-screen">
+    <main class="pl-4 mt-4 h-full bg-neutral-50">
       <div class="mt-4 flex items-center gap-3">
         <button @click="dateDelta(-1)" class="rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-700 shadow-sm hover:bg-gray-50">
           <ChevronLeftIcon class="w-4" />

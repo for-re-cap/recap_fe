@@ -41,5 +41,7 @@ export interface AccountBook {
   payMethod: string;
   memo: string;
   tags: string[];
-  instal : number
+  instal : number; // 할부개월
+  user : string;
+
 }

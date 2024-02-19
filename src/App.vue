@@ -3,7 +3,7 @@
     <header>
       <HeaderMain v-show="showTopbar" class="z-50" />
     </header>
-    <div class="min-h-screen">
+    <div class="">
       <SideBar v-show="sidebarOpen" />
       <RouterView />
     </div>
