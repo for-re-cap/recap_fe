@@ -1,6 +1,6 @@
 <template>
   <div>
-    카테고리선택
+    <span class="pl-4">카테고리선택</span>
     <CardList :categoryList="actions" />
   </div>
 </template>

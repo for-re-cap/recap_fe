@@ -1,13 +1,13 @@
 <template>
   <div>
     <h2 class="text-sm font-medium text-gray-500">
-      Pinned tags
+      <span class="pl-4">Pinned tags</span>
       <div class="absolute right-4 lg:top-[150px] mt-1 bottom-2">
         <PlusCircleIcon class="w-10 h-10 text-green-600 hover:cursor-pointer" @click="addTags(tags)" />
       </div>
     </h2>
 
-    <ul role="list" class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+    <ul role="list" class="mt-4 grid grid-cols-1 gap-5 px-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
       <template v-for="tag in tags" :key="tag.name">
         <li class="col-span-1 flex rounded-lg border">
           <div class="flex flex-shrink-0 items-center justify-center rounded-l-md text-sm font-medium p-1 ml-3">

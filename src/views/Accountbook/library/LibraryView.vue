@@ -7,7 +7,7 @@
       <div class="pt-2 mb-2">
         <TabsInPill v-model:tabs="tabs" />
       </div>
-      <div class="pl-4">
+      <div class="">
         <RouterView />
       </div>
     </main>
