@@ -3,7 +3,7 @@
     <header class="flex pl-4 py-2 h-10 items-center bg-slate-300">
       <span class="font-semibold">자산</span>
     </header>
-    <main class="mt-2 ">
+    <main class="mt-2  h-full bg-neutral-50">
       <div class="pt-2 mb-2">
         <TabsInPill v-model:tabs="tabs" />
       </div>

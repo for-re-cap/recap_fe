@@ -3,7 +3,7 @@
     <header class="flex pl-4 py-2 h-10 items-center bg-slate-300">
       <span class="font-semibold">2023년도 예산</span>
     </header>
-    <main class="pt-2 border h-screen">
+    <main class="pt-2  h-full bg-neutral-50">
       <div class="mt-2 pl-4">
         <div class="">
           <div class="sm:flex-auto">

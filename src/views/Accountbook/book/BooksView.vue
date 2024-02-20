@@ -3,7 +3,7 @@
     <header class="flex pl-4 py-2 h-10 items-center bg-slate-300">
       <span class="font-semibold">가계부 작성</span>
     </header>
-    <main class="pl-4 mt-4 border h-screen">
+    <main class="pl-4 mt-4 h-full bg-neutral-50">
       <select class="p-2 mb-2">
         <option>11월 2023</option>
         <option>12월 2023</option>
