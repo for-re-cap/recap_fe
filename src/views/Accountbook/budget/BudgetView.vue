@@ -8,7 +8,7 @@
         <div class="">
           <div class="sm:flex-auto">
             <h1 class="text-base font-semibold leading-6 text-gray-900">
-              수입예산
+              {{selected.name}}예산
             </h1>
             <ListBox
               :propList="propList"
@@ -16,7 +16,7 @@
               @update:modelValue="(sel) => selected = sel"
             />
             <p class="mt-2 text-sm text-gray-700">
-              1년중 수입에대한 예산을 입력해주세요
+              <!-- 1년중 {{selected.name}}에대한 예산을 입력해주세요 -->
             </p>
             <BudgetTable v-model:budgetList="budgetList" @addBudget="addBudget($event)"/>
           </div>
@@ -45,7 +45,7 @@ const propList = [
 const selected = ref(propList[0]);
 
 
-/** 예산 목록 */
+/** 예산 목록 가데이터 */
 const budgetList = ref<Budget[]>([ // TODO :: budgetDsc number or string 선택해주어야함
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},

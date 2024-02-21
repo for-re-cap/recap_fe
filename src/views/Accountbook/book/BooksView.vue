@@ -9,7 +9,7 @@
         <option>12월 2023</option>
       </select>
       
-      <BooksTable :bookList="bookList"/>
+      <BooksTable v-model:bookList="bookList" @addBook="addBook($event)"/>
     </main>
   </div>
 </template>
@@ -34,7 +34,10 @@ const tabs = ref([
 const bookList = ref<AccountBook[]>([
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다", instal:4,tags:[], user:'승기'},
 ])
-
+const addBook = (book: any) => {
+  // TODO :: 백앤드 저장 연동
+  bookList.value.push(book)
+};
 
 
 </script>

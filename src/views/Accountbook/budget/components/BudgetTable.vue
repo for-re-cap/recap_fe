@@ -86,7 +86,6 @@ import BudgetAdd from "./BudgetAdd.vue";
 import { computed, ref } from "vue";
 import { PencilIcon, TrashIcon, TagIcon, SquaresPlusIcon, ChevronRightIcon, ChevronDownIcon } from "@heroicons/vue/24/outline";
 import type { Budget } from "@/types";
-import { sortAndDeduplicateDiagnostics } from "typescript";
 
 const budgetAdd = ref(false);
 
@@ -118,6 +117,7 @@ const addBudget = (data: { dsc: boolean; budget: Budget }) => {
   budgetAdd.value = data.dsc;
   if (data.dsc){
     emit("addBudget", data.budget);
+    budgetAdd.value = false
   }else{
     budgetAdd.value = data.dsc
   } 

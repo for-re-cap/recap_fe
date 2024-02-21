@@ -31,13 +31,13 @@
                 </div> -->
                   <div class="mt-3 text-center sm:mt-5">
                     <div class="flex justify-between items-center">
-                      <DialogTitle as="h3" class="mt-4 pb-3 font-semibold leading-6 text-gray-900 ">예산 내역 추가</DialogTitle>
+                      <DialogTitle as="h3" class="mt-4 pb-3 font-semibold leading-6 text-gray-900">지출 내역 추가</DialogTitle>
                       <div class="flex gap-2 justify-end text-sm">
                         <button
                           v-for="budget in budgetDsc"
                           :key="budget.id"
-                          :class="[budgetAdd.budgetDsc == budget.id ? 'text-red-600' : '', 'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
-                          @click="budgetAdd.budgetDsc = budget.id"
+                          :class="[books.budgetDsc == budget.id ? 'text-red-600' : '', 'px-1 text-smborder inline-block hover:bg-slate-100 hover:cursor-pointer']"
+                          @click="books.budgetDsc = budget.id"
                         >
                           {{ budget.name }}
                         </button>
@@ -46,13 +46,13 @@
                     <div class="mt-2 flex flex-col justify-start gap-y-6">
                       <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><SwatchIcon class="w-5 h-5" /></p>
-                        <select class="col-span-4 border" @change="(event:any) => budgetAdd.category = event.target.value">
+                        <select class="col-span-4 border" @change="(event:any) => books.category = event.target.value">
                           <option>식사</option>
                           <option>식사2</option>
                           <option>식사</option>
                         </select>
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
-                        <select class="col-span-4 border" @change="(event:any) => budgetAdd.detailCate = event.target.value">
+                        <select class="col-span-4 border" @change="(event:any) => books.detailCate = event.target.value">
                           <option>상세카테고리</option>
                           <option>식사2</option>
                           <option>식사</option>
@@ -60,29 +60,29 @@
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><PencilSquareIcon class="w-5 h-5" /></p>
-                        <input v-model="budgetAdd.contents" class="col-span-4 border" placeholder="지출내역을 입력해주세요." />
+                        <input v-model="books.contents" class="col-span-4 border" placeholder="지출내역을 입력해주세요." />
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><BanknotesIcon class="w-5 h-5" /></p>
-                        <input v-model="budgetAdd.am" type="number" class="col-span-4 border" placeholder="지출금액을 입력해주세요." />
+                        <input v-model="books.am" type="number" class="col-span-4 border" placeholder="지출금액을 입력해주세요." />
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><WalletIcon class="w-5 h-5" /></p>
-                        <select class="col-span-4 border" @change="(event:any) => budgetAdd.payMethod = event.target.value">
+                        <select class="col-span-4 border" @change="(event:any) => books.payMethod = event.target.value">
                           <option>자산목록 필요한가?? 상의필요</option>
                           <option>현금/은행/증권/부채</option>
                           <option>자산목록에서</option>
                           <option>자산목록에서</option>
                         </select>
-                        <!-- <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
-                      <select class="col-span-4 border">
-                        <option>일시불</option>
-                      </select> -->
+                        <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
+                        <select class="col-span-4 border" v-model="books.instal">
+                          <option v-for="install in installList" :key="install.id" :value="install">{{ install.name }}</option>
+                        </select>
                       </div>
                       <div class="grid grid-cols-5 grid-rows-2 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><CalendarIcon class="w-5 h-5" /></p>
-                        <input type="date" v-model="budgetAdd.days" class="col-span-4" />
-                        <!-- <VueDatePicker v-model="date" class="col-span-4"></VueDatePicker> -->
+                        <!-- <input type="date" v-model="books.days" class="col-span-4" /> -->
+                        <DatePicker v-model="date" class="col-span-4"></DatePicker>
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
                         <select class="col-span-4 border">
                           <option>반복주기</option>
@@ -96,7 +96,7 @@
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"><DocumentIcon class="w-5 h-5" /></p>
-                        <input class="col-span-4 border" v-model="budgetAdd.memo" />
+                        <input class="col-span-4 border" v-model="books.memo" />
                       </div>
                     </div>
                   </div>
@@ -105,14 +105,14 @@
                   <button
                     type="button"
                     class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @click="$emit('update:open', { dsc: true, budget: budgetAdd }) /* TODO 저장기능 만들어줘야행 */"
+                    @click="$emit('update:open', { dsc: true, contents: books }) /* TODO 저장기능 만들어줘야행 */"
                   >
                     저장
                   </button>
                   <button
                     type="button"
                     class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @click="$emit('update:open', { dsc: false, budget: null })"
+                    @click="$emit('update:open', { dsc: false, contents: null })"
                   >
                     취소
                   </button>
@@ -130,11 +130,14 @@
 import { computed, ref } from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import { PencilSquareIcon, SwatchIcon, BanknotesIcon, CalendarIcon, TagIcon, WalletIcon, DocumentIcon } from "@heroicons/vue/24/outline";
+import DatePicker from "@/components/DatePicker.vue";
 
 import { getInstallList } from "@/views/accountbook/common";
 import { format } from "date-fns";
-import type { Budget } from "@/types";
+import type { AccountBook } from "@/types";
 
+
+defineEmits(['update:open'])
 defineProps<{
   open: boolean;
 }>();
@@ -142,10 +145,10 @@ defineProps<{
 const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const date = format(today, "yyyy-MM-dd");
+
 const installList = <{ id: number; name: string; instal: number }[]>(<unknown>computed(() => {
   return getInstallList();
 }));
-
 
 const tagList = [
   { id: 0, name: "가족" },
@@ -164,15 +167,18 @@ const budgetDsc = [
 
 const selectedBudget = ref(budgetDsc[0]);
 
-const budgetAdd = ref<Budget>({
-  budgetDsc: 0,
+const books = ref<AccountBook>({
+  budgetDsc: "",
   category: "",
   detailCate: "",
   contents: "",
   am: 0,
-  days: date,
+  days: "",
   payMethod: "",
   memo: "",
+  tags: [],
+  instal: 1,
+  user: "",
 });
 
 const budget = computed(() => {});

@@ -1,4 +1,13 @@
 <template>
+  <BooksAdd
+    v-if="bookAdd"
+    v-model:open="bookAdd"
+    @update:open="
+      (data) => {
+        addbook(data);
+      }
+    "
+  />
   <div class="pr-2">
     <div class="sm:flex sm:items-center">
       <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -49,6 +58,8 @@
             <td class="px-3 py-4 text-sm text-gray-500 text-center">{{ book.user }}</td>
             <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ book.memo }}</td>
             <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">{{ book.tags }}</td>
+            <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">.</td>
+            <td class="max-sm:hidden px-3 py-4 text-sm text-gray-500">.</td>
           </tr>
         </tbody>
       </table>
@@ -59,15 +70,14 @@
 <script setup lang="ts">
 import { PlusIcon } from "@heroicons/vue/24/outline";
 import { fnum } from "@/ts/utils";
-// import bookAdd from "./bookAdd.vue";
+import BooksAdd from "./BooksAdd.vue";
 import { computed, ref } from "vue";
 import { PencilIcon, TrashIcon, TagIcon, SquaresPlusIcon, ChevronRightIcon, ChevronDownIcon } from "@heroicons/vue/24/outline";
 import type { AccountBook } from "@/types";
-import { sortAndDeduplicateDiagnostics } from "typescript";
 
 const bookAdd = ref(false);
 
-const emit = defineEmits(["addbook"]);
+const emits = defineEmits(["addBook"]);
 
 const props = defineProps<{
   bookList: AccountBook[];
@@ -85,16 +95,17 @@ const mobilea = computed({
   mobile.value = mob
   return mob;
   },
-  set(newvalue){
-    console.log(newvalue)
+  set(newValue){
+    console.log(newValue)
   },
   
 });
 
-const addbook = (data: { dsc: boolean; book: AccountBook }) => {
+const addbook = (data: { dsc: boolean; contents: AccountBook }) => {
   bookAdd.value = data.dsc;
   if (data.dsc){
-    emit("addbook", data.book);
+    emits("addBook", data.contents);
+    bookAdd.value = false;
   }else{
     bookAdd.value = data.dsc
   } 
