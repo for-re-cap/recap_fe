@@ -8,18 +8,18 @@
         <option>11월 2023</option>
         <option>12월 2023</option>
       </select>
-      
-      <BooksTable v-model:bookList="bookList" @addBook="addBook($event)"/>
+
+      <BooksTable v-model:bookList="bookList" @addBook="addBook($event)" />
+      <div><br /></div>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { PencilIcon,  TrashIcon,TagIcon ,SquaresPlusIcon} from "@heroicons/vue/24/outline";
+import { PencilIcon, TrashIcon, TagIcon, SquaresPlusIcon } from "@heroicons/vue/24/outline";
 import BooksTable from "./components/BooksTable.vue";
 import type { AccountBook } from "@/types";
-
 
 /** tabs  */
 const tabs = ref([
@@ -28,16 +28,24 @@ const tabs = ref([
   { name: "자산별", idx: 2, route: "" },
 ]);
 
-
-
 /** acconutBook data 연결 */
 const bookList = ref<AccountBook[]>([
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다", instal:4,tags:[], user:'승기'},
-])
+  {
+    budgetDsc: "수입",
+    category: "주수입",
+    detailCate: "기타",
+    contents: "월급",
+    am: 10000,
+    days: "2024-02-01",
+    payMethod: "계좌",
+    memo: "달달하다",
+    instal: 4,
+    tags: [],
+    user: "승기",
+  },
+]);
 const addBook = (book: any) => {
   // TODO :: 백앤드 저장 연동
-  bookList.value.push(book)
+  bookList.value.push(book);
 };
-
-
 </script>

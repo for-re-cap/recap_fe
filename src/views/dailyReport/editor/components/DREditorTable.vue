@@ -1,6 +1,6 @@
 <template>
   <div class="mt-4">
-    <table class="divide-y divide-gray-300">
+    <table class="min-w-full divide-y divide-gray-300">
       <thead class="bg-orange-300">
         <tr>
           <th scope="col" colspan="5" class="px-2 py-1 text-sm font-medium">{{ date }} ({{ week[new Date(date).getDay()] }})</th>

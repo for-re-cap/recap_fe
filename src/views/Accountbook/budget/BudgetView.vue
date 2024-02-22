@@ -19,6 +19,7 @@
               <!-- 1년중 {{selected.name}}에대한 예산을 입력해주세요 -->
             </p>
             <BudgetTable v-model:budgetList="budgetList" @addBudget="addBudget($event)"/>
+            <div><br></div>
           </div>
         </div>
       </div>
@@ -76,7 +77,7 @@ const budgetList = ref<Budget[]>([ // TODO :: budgetDsc number or string 선택�
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
   { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
-  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
+  { budgetDsc : "수입" , category: "주수입", detailCate :"기타", contents: "월급last", am: 10000, days : "2024-02-01" , payMethod: "계좌" ,memo:"달달하다"},
 ]);
 
 const addBudget = (budget: any) => {
