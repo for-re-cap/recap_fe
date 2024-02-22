@@ -78,8 +78,9 @@
 
           <div class="flex justify-between gap-x-4 py-3" >
             <dt class="text-gray-500">
-              <span v-if="card.dsc == '계좌' || card.dsc == '증권' || card.dsc == '부채' || card.dsc == '현금'">잔액</span>
-              <span v-if="card.dsc == '신용' || card.dsc == '체크'">누적</span>
+              <span v-if="card.dsc == '증권'">예수금</span>
+              <span v-else-if="card.dsc == '계좌' || card.dsc == '부채' || card.dsc == '현금'">잔액</span>
+              <span v-else-if="card.dsc == '신용' || card.dsc == '체크'">누적</span>
             </dt>
             <dd class="flex items-start gap-x-2">
               <div class="font-medium text-gray-900" v-if="!card.modify">{{ fnum(card.amount) }}원</div>
