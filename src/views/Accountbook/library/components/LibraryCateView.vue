@@ -8,8 +8,23 @@
 <script setup lang="ts">
 import CardList from "@/components/grid-list/CardList.vue";
 import { AcademicCapIcon, BanknotesIcon, EllipsisVerticalIcon,CheckBadgeIcon, ClockIcon, ReceiptRefundIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import axios from "axios";
 
 /**************************** 카테고리 들어가는 내용 데이터 백에서 호출로 변경되어야함~! ********************************************************/
+
+const get_category = () =>{
+
+  axios.get('/api/v1/recap/libarary-category').then((resp:any)=>{
+    console.log(resp)
+  }).catch((err:any)=>{
+    console.log(err)
+  })
+
+}
+get_category();
+
+
+
 const actions = [
   {
     title: "식사",
