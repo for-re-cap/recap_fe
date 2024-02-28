@@ -1,31 +1,19 @@
 <template>
-  <div
-    class=" divide-gray-200 rounded-lg sm:grid sm:grid-cols-3 "
-  >
+  <div class="divide-gray-200 rounded-lg sm:grid sm:grid-cols-3">
     <div
       v-for="(action, actionIdx) in categoryList"
       :key="action.title"
       :class="[
-        actionIdx === 0
-          ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none '
-          : '',
+        actionIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none ' : '',
         actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
         actionIdx === categoryList.length - 2 ? 'sm:rounded-bl-lg' : '',
-        actionIdx === categoryList.length - 1
-          ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none'
-          : '',
+        actionIdx === categoryList.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '',
         'group relative bg-white p-3 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 m-3 border',
       ]"
     >
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <span
-            :class="[
-              action.iconBackground,
-              action.iconForeground,
-              'inline-flex rounded-full p-1 ring-3 ring-white',
-            ]"
-          >
+          <span :class="[action.iconBackground, action.iconForeground, 'inline-flex rounded-full p-1 ring-3 ring-white']">
             <component :is="action.icon" class="h-6 w-6" aria-hidden="true" />
           </span>
           <a class="focus:outline-none ml-2 text-sm font-semibold">
@@ -47,48 +35,34 @@
           >
             <MenuItems class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
               <MenuItem v-slot="{ active }">
-                <a href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']"
-                  >Edit<span class="sr-only">, {{  }}</span></a
-                >
+                <a href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Edit<span class="sr-only">, {{}}</span></a>
               </MenuItem>
             </MenuItems>
           </transition>
         </Menu>
       </div>
-
-      <div class="mt-4">
-        <h3 class="text-base font-semibold leading-6 text-gray-900"></h3>
-        <p class="mt-4 text-[13px] text-gray-500">
-          Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit
-          repellendus qui ut at blanditiis et quo et molestiae.
-        </p>
+      <div class=" mt-4 gap-2 break-words">
+        <!-- <h3 class="text-base font-semibold leading-6 text-gray-900"></h3> -->
+        <span class="mt-4 text-[13px] text-gray-500 pl-2" v-for="sub in action.contents">{{ sub.name }}</span>
       </div>
-      <span
-        class="pointer-events-none absolute right-6 top-6 text-gray-400 group-hover:text-gray-500"
-      >
-      </span>
+      <span class="pointer-events-none absolute right-6 top-6 text-gray-400 group-hover:text-gray-500"></span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  AcademicCapIcon,
-  BanknotesIcon,
-  EllipsisVerticalIcon,
-  CheckBadgeIcon,
-  ClockIcon,
-  ReceiptRefundIcon,
-  UsersIcon,
-} from "@heroicons/vue/24/outline";
+import { AcademicCapIcon, BanknotesIcon, EllipsisVerticalIcon, CheckBadgeIcon, ClockIcon, ReceiptRefundIcon, UsersIcon } from "@heroicons/vue/24/outline";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { EllipsisHorizontalIcon } from "@heroicons/vue/20/solid";
-
 
 defineProps<{
   categoryList: {
     title: string;
     icon: any;
+    contents: {
+      code: string;
+      name: string;
+    }[];
     iconForeground: string;
     iconBackground: string;
   }[];

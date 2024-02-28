@@ -25,7 +25,11 @@ const sidebarOpen = computed(() => store.sidebarOpen); // side bar show
 const showTopbar = computed(() => store.showTopbar);
 
 
-
-
-
 </script>
+
+<style>
+* {
+  font-family: "Pretendard" !important;
+}
+
+</style>

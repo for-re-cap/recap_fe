@@ -21,13 +21,13 @@ import router from "@/router";
 import { ref, onUpdated, onBeforeMount } from "vue";
 
 const tabs = ref([
-  { name: "카테고리", idx: 0,  route: "libarayCategory" },
-  { name: "태그", idx: 1,  route: "libarayTag" },
+  { name: "카테고리", idx: 0,  route: "libraryCategory" },
+  { name: "태그", idx: 1,  route: "libraryTag" },
 ]);
 
-onBeforeMount(() => router.push({ name: "libarayCategory" }));
+onBeforeMount(() => router.push({ name: "libraryCategory" }));
 
 onUpdated(() => {
-  if (router.currentRoute.value.name == "accountLibrary") router.push({ name: "libarayCategory" });
+  if (router.currentRoute.value.name == "accountLibrary") router.push({ name: "libraryCategory" });
 });
 </script>

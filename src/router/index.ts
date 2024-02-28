@@ -136,7 +136,7 @@ const router = createRouter({
           children: [
             {
               path: "category",
-              name: "libarayCategory",
+              name: "libraryCategory",
               component: () =>
                 import(
                   "@/views/accountbook/library/components/LibraryCateView.vue"
@@ -144,7 +144,7 @@ const router = createRouter({
             },
             {
               path: "tag",
-              name: "libarayTag",
+              name: "libraryTag",
               component: () =>
                 import(
                   "@/views/accountbook/library/components/LibraryTagsView.vue"
