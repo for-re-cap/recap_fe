@@ -46,7 +46,8 @@
                 </svg>
                 Login
               </button>
-              <button
+              <router-link
+                :to="{ path: 'sign' }"
                 class="border border-indigo-500 hover:bg-indigo-500 hover:text-white duration-100 ease-in-out w-6/12 text-indigo-500 p-2 flex flex-row justify-center items-center gap-1"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +59,7 @@
                   />
                 </svg>
                 Sign-up
-              </button>
+              </router-link>
             </div>
             <div class="my-2 flex flex-row justify-center">
               <span class="absolute bg-white px-4">or</span>
@@ -116,7 +117,7 @@
               </button>
             </div>
             <div class="w-full flex flex-row justify-end">
-              <div class="border border-indigo-500 hover:bg-indigo-500 hover:text-white  text-indigo-500  flex flex-row justify-center items-center p-1">
+              <div class="border border-indigo-500 hover:bg-indigo-500 hover:text-white text-indigo-500 flex flex-row justify-center items-center p-1">
                 <a href="#">Forgot password </a>
               </div>
             </div>

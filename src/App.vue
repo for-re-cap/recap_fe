@@ -29,7 +29,7 @@ const showTopbar = computed(() => store.showTopbar);
 
 <style>
 * {
-  font-family: "Pretendard" !important;
+  font-family: "Pretendard" ;
 }
 
 </style>

@@ -20,6 +20,17 @@
 
         <form class="my-8 text-sm">
           <div class="flex flex-col my-4">
+            <label for="name" class="text-gray-700">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div class="flex flex-col my-4">
             <label for="id" class="text-gray-700">ID</label>
             <input
               type="text"
@@ -31,13 +42,13 @@
           </div>
 
           <div class="flex flex-col my-4">
-            <label for="name" class="text-gray-700">Name</label>
+            <label for="pwd" class="text-gray-700">Password</label>
             <input
-              type="text"
-              name="name"
-              id="name"
+              type="password"
+              name="pwd"
+              id="pwd"
               class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-              placeholder="Enter your name"
+              placeholder="Enter your Password"
             />
           </div>
 
