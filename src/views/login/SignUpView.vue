@@ -19,6 +19,18 @@
         </p>
 
         <form class="my-8 text-sm">
+
+          <div class="flex flex-col my-4">
+            <label for="email" class="text-gray-700">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
+              placeholder="Enter your email"
+            />
+          </div>
+
           <div class="flex flex-col my-4">
             <label for="name" class="text-gray-700">Name</label>
             <input
@@ -30,7 +42,7 @@
             />
           </div>
 
-          <div class="flex flex-col my-4">
+          <!-- <div class="flex flex-col my-4">
             <label for="id" class="text-gray-700">ID</label>
             <input
               type="text"
@@ -39,7 +51,7 @@
               class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
               placeholder="Enter your ID"
             />
-          </div>
+          </div> -->
 
           <div class="flex flex-col my-4">
             <label for="pwd" class="text-gray-700">Password</label>
@@ -52,16 +64,7 @@
             />
           </div>
 
-          <div class="flex flex-col my-4">
-            <label for="email" class="text-gray-700">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="mt-2 p-2 border border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm text-gray-900"
-              placeholder="Enter your email"
-            />
-          </div>
+
 
           <!-- <div class="flex flex-col my-4">
             <label for="password" class="text-gray-700">Password</label>
