@@ -1,6 +1,10 @@
 <template>
   <div>
     <span class="pl-4">카테고리선택</span>
+    <div class="m-auto text-center">
+      <LoadingSpinner v-if="loading" class=""/>
+    </div>
+    
     <CardList :categoryList="actions" />
   </div>
 </template>
@@ -8,21 +12,25 @@
 <script setup lang="ts">
 import CardList from "@/components/grid-list/CardList.vue";
 import { AcademicCapIcon, BanknotesIcon, EllipsisVerticalIcon, CheckBadgeIcon, ClockIcon, ReceiptRefundIcon, UsersIcon } from "@heroicons/vue/24/outline";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 import axios from "axios";
 import { ref } from "vue";
+
+const loading = ref(true);
 
 /**************************** 카테고리 들어가는 내용 데이터 백에서 호출로 변경되어야함~! ********************************************************/
 
 const get_category = () => {
+  
   axios
     .get("/api/v1/recap/library-category")
     .then((resp: any) => {
       console.log(resp);
       resp.data.data.forEach((el: any) => {
-        let tempArr:{code:string, name: string}[] = []
-        el.data.forEach((sub:any) => {
-          tempArr.push(sub)
-        }) 
+        let tempArr: { code: string; name: string }[] = [];
+        el.data.forEach((sub: any) => {
+          tempArr.push(sub);
+        });
         actions.value.push({
           title: el.name,
           icon: ClockIcon,
@@ -31,7 +39,7 @@ const get_category = () => {
           iconBackground: "bg-teal-50",
         });
       });
-    })
+    }).then(()=>loading.value = false)
     .catch((err: any) => {
       console.log(err);
     });
@@ -43,8 +51,8 @@ const actions = ref<
     title: string;
     icon: any;
     contents: {
-      code : string;
-      name : string;
+      code: string;
+      name: string;
     }[];
     iconForeground: string;
     iconBackground: string;
