@@ -27,8 +27,8 @@
             <table class="min-w-full divide-y divide-gray-300">
               <thead class="">
                 <tr>
-                  <th scope="col" colspan="7" class="sticky top-0 py-1 pr-3 text-sm font-semibold text-gray-700 bg-orange-300">
-                    <p class="flex gap-3 float-right">
+                  <th scope="col" colspan="7" class="sticky top-0 py-1 pr-3 text-sm font-semibold text-gray-700 bg-orange-100">
+                    <p class="flex gap-3 float-right pt-2">
                       <button><SquaresPlusIcon class="w-5 h-5" /></button>
                       <button><PencilIcon class="w-5 h-5" /></button>
                       <button><TrashIcon class="w-5 h-5" /></button>
@@ -37,13 +37,13 @@
                   </th>
                 </tr>
                 <tr>
-                  <th scope="col" class="sticky top-7 bg-orange-300 py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">항목</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 max-sm:hidden py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">카테고리</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 px-3 py-2 text-sm font-semibold text-gray-900 text-center">내용</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 px-3 py-2 text-sm font-semibold text-gray-900 text-center">금액</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 px-3 py-2 text-sm font-semibold text-gray-900 text-center">일자</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">결제</th>
-                  <th scope="col" class="sticky top-7 bg-orange-300 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">비고</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">항목</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden py-2 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0 text-center">카테고리</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">내용</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">금액</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 px-3 py-2 text-sm font-semibold text-gray-900 text-center">일자</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">결제</th>
+                  <th scope="col" class="sticky top-7 bg-orange-100 max-sm:hidden px-3 py-2 text-sm font-semibold text-gray-900 text-center">비고</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white">

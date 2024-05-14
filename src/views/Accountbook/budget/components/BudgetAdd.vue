@@ -85,8 +85,10 @@
                         <!-- <VueDatePicker v-model="date" class="col-span-4"></VueDatePicker> -->
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
                         <select class="col-span-4 border">
-                          <option>반복주기</option>
+                          <option v-for="item in repaeats" :key="item.value" :value="item.value" >{{ item.name }}</option>
                         </select>
+                        <p class="col-span-1 text-sm text-gray-500 font-semibold text-center"></p>
+                        <input type="date" v-model="budgetAdd.days" class="col-span-4" />
                       </div>
                       <div class="grid grid-cols-5 grid-rows-1 gap-y-2">
                         <p class="col-span-1 text-sm text-gray-500 font-semibold text-center mt-1"><TagIcon class="w-5 h-5" /></p>
@@ -146,6 +148,13 @@ const installList = <{ id: number; name: string; instal: number }[]>(<unknown>co
   return getInstallList();
 }));
 
+
+const repaeats = [
+  { name: '없음', value: 'select'},
+  { name: '매달', value: 'month' },
+  { name: '매주', value: 'week'},
+  { name: '매일', value: 'day'},
+]
 
 const tagList = [
   { id: 0, name: "가족" },
